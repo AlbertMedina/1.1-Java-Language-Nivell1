@@ -2,8 +2,8 @@ package Level2;
 
 public class Phone {
 
-    public String brand;
-    public String model;
+    private String brand;
+    private String model;
 
     public Phone(String brand, String model) {
         this.brand = brand;
