@@ -24,5 +24,14 @@ public class Main {
         PercussionInstrument cymbal = new PercussionInstrument("Cymbal", 500);
         cymbal.play();
 
+        System.out.println();
+
+        System.out.println("Creating a new car:");
+        Car myCar = new Car("Scenic", 120);
+        System.out.println("Brand: " + Car.brand);
+        System.out.println("Model: " + Car.model);
+        System.out.println("Power: " + myCar.power);
+        Car.brake();
+        myCar.accelerate();
     }
 }
