@@ -1,13 +1,18 @@
 package Level3;
 
-public class Writer {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Copywriter {
 
     private String name;
     private final String dni;
     private static int salary = 1500;
+    private List<News> news;
 
-    public Writer(String name, String dni) {
+    public Copywriter(String name, String dni) {
         this.name = name;
         this.dni = dni;
+        news = new ArrayList<>();
     }
 }
