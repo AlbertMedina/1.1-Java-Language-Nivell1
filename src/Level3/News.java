@@ -15,4 +15,8 @@ public abstract class News {
     public abstract int calculateNewsPrice();
 
     public abstract int calculateNewsRating();
+
+    public String getHeadline() {
+        return headline;
+    }
 }
