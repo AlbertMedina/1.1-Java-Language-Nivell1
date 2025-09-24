@@ -13,7 +13,7 @@ public class F1News extends News {
     public int calculateNewsPrice() {
         int price = 100;
 
-        if (racingTeam.equals("Ferrari") || racingTeam.equals("Mercedes")) {
+        if (racingTeam.equalsIgnoreCase("Ferrari") || racingTeam.equalsIgnoreCase("Mercedes")) {
             price += 50;
         }
 
@@ -24,7 +24,7 @@ public class F1News extends News {
     public int calculateNewsRating() {
         int rating = 4;
 
-        if (racingTeam.equals("Ferrari") || racingTeam.equals("Mercedes")) {
+        if (racingTeam.equalsIgnoreCase("Ferrari") || racingTeam.equalsIgnoreCase("Mercedes")) {
             rating += 2;
         }
 

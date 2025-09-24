@@ -15,7 +15,7 @@ public class MotorcyclingNews extends News {
     public int calculateNewsPrice() {
         int price = 100;
 
-        if (racingTeam.equals("Honda") || racingTeam.equals("Yamaha")) {
+        if (racingTeam.equalsIgnoreCase("Honda") || racingTeam.equalsIgnoreCase("Yamaha")) {
             price += 50;
         }
 
@@ -26,7 +26,7 @@ public class MotorcyclingNews extends News {
     public int calculateNewsRating() {
         int rating = 3;
 
-        if (racingTeam.equals("Honda") || racingTeam.equals("Yamaha")) {
+        if (racingTeam.equalsIgnoreCase("Honda") || racingTeam.equalsIgnoreCase("Yamaha")) {
             rating += 3;
         }
 

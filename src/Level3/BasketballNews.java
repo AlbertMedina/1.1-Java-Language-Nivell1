@@ -15,11 +15,11 @@ public class BasketballNews extends News {
     public int calculateNewsPrice() {
         int price = 250;
 
-        if (competition.equals("Euroleague")) {
+        if (competition.equalsIgnoreCase("Euroleague")) {
             price += 75;
         }
 
-        if (club.equals("Barça") || club.equals("Madrid")) {
+        if (club.equalsIgnoreCase("Barça") || club.equalsIgnoreCase("Madrid")) {
             price += 75;
         }
 
@@ -30,15 +30,15 @@ public class BasketballNews extends News {
     public int calculateNewsRating() {
         int rating = 4;
 
-        if (competition.equals("Euroleague")) {
+        if (competition.equalsIgnoreCase("Euroleague")) {
             rating += 3;
         }
 
-        if (competition.equals("ACB")) {
+        if (competition.equalsIgnoreCase("ACB")) {
             rating += 2;
         }
 
-        if (club.equals("Barça") || club.equals("Madrid")) {
+        if (club.equalsIgnoreCase("Barça") || club.equalsIgnoreCase("Madrid")) {
             rating += 1;
         }
 

@@ -17,15 +17,15 @@ public class FootballNews extends News {
     public int calculateNewsPrice() {
         int price = 300;
 
-        if (competition.equals("Champions League")) {
+        if (competition.equalsIgnoreCase("Champions League")) {
             price += 100;
         }
 
-        if (club.equals("Barça") || club.equals("Madrid")) {
+        if (club.equalsIgnoreCase("Barça") || club.equalsIgnoreCase("Madrid")) {
             price += 100;
         }
 
-        if (player.equals("Ferran Torres") || player.equals("Benzema")) {
+        if (player.equalsIgnoreCase("Ferran Torres") || player.equalsIgnoreCase("Benzema")) {
             price += 50;
         }
 
@@ -36,19 +36,19 @@ public class FootballNews extends News {
     public int calculateNewsRating() {
         int rating = 5;
 
-        if (competition.equals("Champions League")) {
+        if (competition.equalsIgnoreCase("Champions League")) {
             rating += 3;
         }
 
-        if (competition.equals("LaLiga")) {
+        if (competition.equalsIgnoreCase("LaLiga")) {
             rating += 2;
         }
 
-        if (club.equals("Barça") || club.equals("Madrid")) {
+        if (club.equalsIgnoreCase("Barça") || club.equalsIgnoreCase("Madrid")) {
             rating += 1;
         }
 
-        if (player.equals("Ferran Torres") || player.equals("Benzema")) {
+        if (player.equalsIgnoreCase("Ferran Torres") || player.equalsIgnoreCase("Benzema")) {
             rating += 1;
         }
 

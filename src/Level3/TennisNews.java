@@ -15,7 +15,7 @@ public class TennisNews extends News {
     public int calculateNewsPrice() {
         int price = 150;
 
-        if (player.equals("Federer") || player.equals("Nadal") || player.equals("Djokovic")) {
+        if (player.equalsIgnoreCase("Federer") || player.equalsIgnoreCase("Nadal") || player.equalsIgnoreCase("Djokovic")) {
             price += 100;
         }
 
@@ -26,7 +26,7 @@ public class TennisNews extends News {
     public int calculateNewsRating() {
         int rating = 4;
 
-        if (player.equals("Federer") || player.equals("Nadal") || player.equals("Djokovic")) {
+        if (player.equalsIgnoreCase("Federer") || player.equalsIgnoreCase("Nadal") || player.equalsIgnoreCase("Djokovic")) {
             rating += 3;
         }
 
