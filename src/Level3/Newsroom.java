@@ -94,20 +94,20 @@ public class Newsroom {
         }
     }
 
-    public int calculateNewsRating(String dni, String headline) {
+    public int getNewsRating(String dni, String headline) {
         Copywriter copywriter = getCopywriterByDNI(dni);
         if (copywriter != null) {
-            return copywriter.calculateNewsRating(headline);
+            return copywriter.getNewsRating(headline);
         } else {
             System.out.println("Copywriter not found, news rating cannot be calculated.");
             return -1;
         }
     }
 
-    public int calculateNewsPrice(String dni, String headline) {
+    public int getNewsPrice(String dni, String headline) {
         Copywriter copywriter = getCopywriterByDNI(dni);
         if (copywriter != null) {
-            return copywriter.calculateNewsPrice(headline);
+            return copywriter.getNewsPrice(headline);
         } else {
             System.out.println("Copywriter not found, news price cannot be calculated.");
             return -1;

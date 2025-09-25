@@ -196,7 +196,7 @@ public class Main {
         String dni = scanner.nextLine();
         System.out.print("Enter the news headline: ");
         String headline = scanner.nextLine();
-        int rating = newsroom.calculateNewsRating(dni, headline);
+        int rating = newsroom.getNewsRating(dni, headline);
         if (rating >= 0) {
             System.out.println("Rating for this news: " + rating + " points.");
         }
@@ -208,7 +208,7 @@ public class Main {
         String dni = scanner.nextLine();
         System.out.print("Enter the news headline: ");
         String headline = scanner.nextLine();
-        int price = newsroom.calculateNewsPrice(dni, headline);
+        int price = newsroom.getNewsPrice(dni, headline);
         if (price >= 0) {
             System.out.println("Price for this news: " + price + "€.");
         }

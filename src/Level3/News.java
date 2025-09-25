@@ -4,8 +4,8 @@ public abstract class News {
 
     private final String headline;
     private String text;
-    private int rating;
-    private int price;
+    private int rating = -1;
+    private int price = -1;
 
     public News(String headline) {
         this.headline = headline;
@@ -23,5 +23,19 @@ public abstract class News {
 
     public String getHeadline() {
         return headline;
+    }
+
+    public int getRating() {
+        if (rating == -1) {
+            rating = calculateNewsRating();
+        }
+        return rating;
+    }
+
+    public int getPrice() {
+        if (price == -1) {
+            price = calculateNewsPrice();
+        }
+        return price;
     }
 }

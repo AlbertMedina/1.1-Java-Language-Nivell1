@@ -88,20 +88,20 @@ public class Copywriter {
         return sb.toString();
     }
 
-    public int calculateNewsRating(String headline) {
+    public int getNewsRating(String headline) {
         News news = getNewsByHeadline(headline);
         if (news != null) {
-            return news.calculateNewsRating();
+            return news.getRating();
         } else {
             System.out.println("News not found, rating cannot be calculated.");
             return -1;
         }
     }
 
-    public int calculateNewsPrice(String headline) {
+    public int getNewsPrice(String headline) {
         News news = getNewsByHeadline(headline);
         if (news != null) {
-            return news.calculateNewsPrice();
+            return news.getPrice();
         } else {
             System.out.println("News not found, price cannot be calculated.");
             return -1;
