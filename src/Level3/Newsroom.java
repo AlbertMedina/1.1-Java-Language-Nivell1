@@ -1,28 +1,32 @@
 package Level3;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Newsroom {
 
-    private List<Copywriter> copywriters;
+    private List<Copywriter> copywritersList;
 
-    public void addCopywriter(String dni, String name) {
-        if (copywriters.stream().noneMatch(c -> c.getDNI().equalsIgnoreCase(dni))) {
-            copywriters.add(new Copywriter(name, dni));
-            System.out.print("Copywriter added successfully.");
+    public Newsroom() {
+        copywritersList = new ArrayList<>();
+    }
+
+    public void addCopywriter(String name, String dni) {
+        if (copywritersList.stream().noneMatch(c -> c.getDNI().equalsIgnoreCase(dni))) {
+            copywritersList.add(new Copywriter(name, dni));
+            System.out.println("Copywriter added successfully.");
         } else {
-            System.out.print("Copywriter cannot be added because it already exists.");
+            System.out.println("Copywriter cannot be added because it already exists.");
         }
     }
 
     public void removeCopywriter(String dni) {
-        Copywriter copywriter = copywriters.stream().filter(c -> c.getDNI().equalsIgnoreCase(dni)).findFirst().orElse(null);
+        Copywriter copywriter = getCopywriterByDNI(dni);
         if (copywriter != null) {
-            copywriters.remove(copywriter);
-            System.out.print("Copywriter removed successfully.");
+            copywritersList.remove(copywriter);
+            System.out.println("Copywriter removed successfully.");
         } else {
-            System.out.print("Copywriter not found, it cannot be removed.");
+            System.out.println("Copywriter not found, it cannot be removed.");
         }
     }
 
@@ -31,7 +35,7 @@ public class Newsroom {
         if (copywriter != null) {
             copywriter.addFootballNews(headline, competition, club, player);
         } else {
-            System.out.print("Copywriter not found, news cannot be added.");
+            System.out.println("Copywriter not found, news cannot be added.");
         }
     }
 
@@ -40,7 +44,7 @@ public class Newsroom {
         if (copywriter != null) {
             copywriter.addBasketballNews(headline, competition, club);
         } else {
-            System.out.print("Copywriter not found, news cannot be added.");
+            System.out.println("Copywriter not found, news cannot be added.");
         }
     }
 
@@ -49,7 +53,7 @@ public class Newsroom {
         if (copywriter != null) {
             copywriter.addTennisNews(headline, competition, player);
         } else {
-            System.out.print("Copywriter not found, news cannot be added.");
+            System.out.println("Copywriter not found, news cannot be added.");
         }
     }
 
@@ -58,7 +62,7 @@ public class Newsroom {
         if (copywriter != null) {
             copywriter.addF1News(headline, racingTeam);
         } else {
-            System.out.print("Copywriter not found, news cannot be added.");
+            System.out.println("Copywriter not found, news cannot be added.");
         }
     }
 
@@ -67,11 +71,50 @@ public class Newsroom {
         if (copywriter != null) {
             copywriter.addMotorcyclingNews(headline, racingTeam);
         } else {
-            System.out.print("Copywriter not found, news cannot be added.");
+            System.out.println("Copywriter not found, news cannot be added.");
+        }
+    }
+
+    public void removeNewsForCopywriter(String dni, String headline) {
+        Copywriter copywriter = getCopywriterByDNI(dni);
+        if (copywriter != null) {
+            copywriter.removeNews(headline);
+        } else {
+            System.out.println("Copywriter not found, news cannot be removed.");
+        }
+    }
+
+    public String getNewsForCopyWriter(String dni) {
+        Copywriter copywriter = getCopywriterByDNI(dni);
+        if (copywriter != null) {
+            return copywriter.getNews();
+        } else {
+            System.out.println("Copywriter not found, news cannot be shown.");
+            return "";
+        }
+    }
+
+    public int calculateNewsRating(String dni, String headline) {
+        Copywriter copywriter = getCopywriterByDNI(dni);
+        if (copywriter != null) {
+            return copywriter.calculateNewsRating(headline);
+        } else {
+            System.out.println("Copywriter not found, news rating cannot be calculated.");
+            return -1;
+        }
+    }
+
+    public int calculateNewsPrice(String dni, String headline) {
+        Copywriter copywriter = getCopywriterByDNI(dni);
+        if (copywriter != null) {
+            return copywriter.calculateNewsPrice(headline);
+        } else {
+            System.out.println("Copywriter not found, news price cannot be calculated.");
+            return -1;
         }
     }
 
     private Copywriter getCopywriterByDNI(String dni) {
-        return copywriters.stream().filter(c -> c.getDNI().equalsIgnoreCase(dni)).findFirst().orElse(null);
+        return copywritersList.stream().filter(c -> c.getDNI().equalsIgnoreCase(dni)).findFirst().orElse(null);
     }
 }

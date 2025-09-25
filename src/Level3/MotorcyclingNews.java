@@ -1,10 +1,8 @@
 package Level3;
 
-import java.util.Objects;
-
 public class MotorcyclingNews extends News {
 
-    private String racingTeam;
+    private final String racingTeam;
 
     public MotorcyclingNews(String headline, String racingTeam) {
         super(headline);
@@ -31,5 +29,10 @@ public class MotorcyclingNews extends News {
         }
 
         return rating;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\n- Sport: Motorcycling" + "\n- Racing team: " + racingTeam;
     }
 }

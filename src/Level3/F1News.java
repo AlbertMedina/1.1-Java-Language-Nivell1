@@ -2,7 +2,7 @@ package Level3;
 
 public class F1News extends News {
 
-    private String racingTeam;
+    private final String racingTeam;
 
     public F1News(String headline, String racingTeam) {
         super(headline);
@@ -29,5 +29,10 @@ public class F1News extends News {
         }
 
         return rating;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\n- Sport: F1" + "\n- Racing team: " + racingTeam;
     }
 }

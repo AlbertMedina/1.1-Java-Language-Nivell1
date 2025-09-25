@@ -2,8 +2,8 @@ package Level3;
 
 public class BasketballNews extends News {
 
-    private String competition;
-    private String club;
+    private final String competition;
+    private final String club;
 
     public BasketballNews(String headline, String competition, String club) {
         super(headline);
@@ -43,5 +43,10 @@ public class BasketballNews extends News {
         }
 
         return rating;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\n- Sport: Basketball" + "\n- Competition: " + competition + "\n- Club: " + club;
     }
 }
