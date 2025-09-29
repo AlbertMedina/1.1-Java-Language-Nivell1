@@ -1,5 +1,7 @@
 **Description - Exercise statement**
-Java project to manage a newsroom with copywriters and sports news using an interactive menu.
+1. Creating instruments with abstract methods to be played and a implementing a car class with different types of attributes.
+2. Implement a Smartphone class that inherits from Phone and implements Camera and Clock interfaces.
+3. Managing a newsroom with copywriters and sports news using an interactive menu.
 
 **Technologies used**
 - Oracle OpenJDK 23.0.2
